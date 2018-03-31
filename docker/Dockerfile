@@ -17,10 +17,4 @@ VOLUME ["/var/named"]
 
 EXPOSE 53/udp
 
-COPY opt /opt/
-
-COPY etc /etc/
-
-COPY var /var/
-
-CMD ["/opt/start.sh"]
+MD ["sh /opt/start.sh"]
