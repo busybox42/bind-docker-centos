@@ -17,4 +17,6 @@ VOLUME ["/var/named"]
 
 EXPOSE 53/udp
 
-CMD ["/usr/sbin/named", "-u", "named", "-c", "/etc/named.conf", "-f"]
+ENTRYPOINT /usr/sbin/named -u named -c /etc/named.conf -f && /bin/bash
+
+CMD ["true"]
