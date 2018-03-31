@@ -17,4 +17,4 @@ VOLUME ["/var/named"]
 
 EXPOSE 53/udp
 
-CMD ["sh /opt/start.sh"]
+CMD ["/usr/sbin/named", "-u", "named", "-c", "/etc/named.conf", "-f"]
