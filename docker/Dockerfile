@@ -13,8 +13,14 @@ RUN yum update -y --nogpgcheck && yum install -y --nogpgcheck \
   && yum clean all \
   && yum clean metadata
 
-VOLUME ["/data"]
+VOLUME ["/var/named"]
 
 EXPOSE 53/udp
 
-CMD ["/usr/sbin/named -u named -c /etc/named.conf -f"]
+COPY opt /opt/
+
+COPY etc /etc/
+
+COPY var /var/
+
+CMD ["/bin/bash", "/opt/start.sh", "-bash"]
