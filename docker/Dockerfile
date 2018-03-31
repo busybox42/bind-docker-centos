@@ -23,4 +23,4 @@ COPY etc /etc/
 
 COPY var /var/
 
-CMD ["/bin/bash", "/opt/start.sh", "-bash"]
+CMD ["/opt/start.sh"]
