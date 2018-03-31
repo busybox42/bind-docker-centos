@@ -17,4 +17,4 @@ VOLUME ["/data"]
 
 EXPOSE 53/udp
 
-CMD ["/usr/sbin/named"]
+CMD ["/usr/sbin/named -u named -c /etc/named.conf -f"]
