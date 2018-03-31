@@ -1,0 +1,20 @@
+#################################################################
+# Dockerfile to build a bind container image
+# Based on CentOS 7
+# Created by Alan Denniston
+#################################################################
+FROM centos:latest
+MAINTAINER Alan Denniston <alan.denniston@gmail.com>
+
+RUN yum update -y --nogpgcheck && yum install -y --nogpgcheck \
+  bind \
+  bind-utils \
+  openssl \
+  && yum clean all \
+  && yum clean metadata
+
+VOLUME ["/data"]
+
+EXPOSE 53/udp
+
+CMD ["/usr/sbin/named"]
