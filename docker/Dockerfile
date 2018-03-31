@@ -17,4 +17,4 @@ VOLUME ["/var/named"]
 
 EXPOSE 53/udp
 
-MD ["sh /opt/start.sh"]
+CMD ["sh /opt/start.sh"]
