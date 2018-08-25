@@ -13,7 +13,7 @@ docker pull busybox42/bind-docker-centos
 ## Creating the container
 Now that we have the image busybox42/bind-docker-centos we can create the container with a few parameters.
 ```bash
-docker run --name bind -p 53:53/udp -h ns.myhostname.tld busybox42/bind_docker_centos
+docker run --name bind -p 53:53/udp -h ns.myhostname.tld busybox42/bind-docker-centos
 ```
 Name the container, expose udp port 53 for DNS and set a hostname.
 
